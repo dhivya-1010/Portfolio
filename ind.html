@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dhivya V Portfolio</title>
+        <h1>hi</h1>
+        <style>
+            :root{
+      --bg:#0b0f1a;
+      --panel:#0f1524;
+      --text:#e6ecff;
+      --muted:#99a3c7;
+      --accent:#6f7dff;      /* NEC-ish electric indigo */
+      --accent-2:#00e0ff;    /* neon cyan */
+      --success:#22c55e;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --radius-lg: 24px;
+      --max:1200px;
+    }
+        /* RESET */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 80% -10%, rgba(0,224,255,.08), transparent), radial-gradient(900px 500px at -10% 20%, rgba(111,125,255,.12), transparent), var(--bg); color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; line-height:1.6}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+    .grid{display:grid; gap:24px}
+    .pill{display:inline-flex; align-items:center; gap:.5rem; padding:.4rem .8rem; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); border-radius:999px; font-size:.85rem; color:var(--muted)}
+    .btn{display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.2rem; border-radius:999px; font-weight:700; border:1px solid rgba(255,255,255,.12); background:linear-gradient(135deg, rgba(111,125,255,.22), rgba(0,224,255,.22)); backdrop-filter: blur(6px); box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-2px); box-shadow:0 20px 40px rgba(0,224,255,.15)}
+    .btn--ghost{background:transparent}
+    .btn svg{width:18px;height:18px}
+    .badge{font-size:.8rem; color:var(--muted)}
+    .section{padding:80px 0}
+    .section h2{font-size:clamp(1.6rem, 1.1rem + 2.2vw, 2.4rem); line-height:1.2; margin:0 0 8px}
+    .section p.lead{color:var(--muted); margin-top:0}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.10); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .card--hover:hover{transform: translateY(-4px); transition:transform .2s ease}
+    .chip{display:inline-flex; align-items:center; gap:.4rem; padding:.3rem .6rem; border-radius:999px; background:rgba(111,125,255,.15); border:1px solid rgba(111,125,255,.35); font-size:.78rem}
+    .muted{color:var(--muted)}
+    .accent{background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip:text; color:transparent}
+    .glow{position:relative}
+    .glow::after{content:""; position:absolute; inset:-1px; border-radius:inherit; pointer-events:none; background: radial-gradient(600px 200px at 50% -20%, rgba(0,224,255,.25), transparent)}
+    .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent); margin:24px 0}
+
+    /* NAV */
+    .nav{position:sticky; top:0; z-index:50; background:rgba(11,15,26,.6); backdrop-filter: blur(8px); border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{display:flex; align-items:center; gap:.7rem; font-weight:800; letter-spacing:.4px}
+    .brand .logo{width:28px;height:28px; display:inline-grid; place-items:center; border-radius:8px; background:linear-gradient(135deg, var(--accent), var(--accent-2))}
+    .nav-links{display:flex; gap:18px}
+    .nav-links a{padding:8px 10px; border-radius:8px; color:var(--muted)}
+    .nav-links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .menu-btn{display:none}
+
+    /* HERO */
+    .hero{padding:90px 0 70px}
+    .hero-wrap{display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center}
+    .hero h1{font-size:clamp(2rem,1.2rem + 3.5vw,3.5rem); line-height:1.1; margin:.2rem 0 1rem}
+    .hero .sub{color:var(--muted); font-size:1.05rem}
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
+    .stat{display:flex; gap:10px; align-items:center; padding:12px 14px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03)}
+    .hero-card{height:100%; padding:26px; border-radius:var(--radius-lg)}
+    .hero-visual{height:100%; display:grid; gap:12px}
+    .spark{height:14px; width:14px; border-radius:50%; background: radial-gradient(circle at 30% 30%, white, var(--accent-2) 40%, transparent 60%); filter: blur(.4px); display:inline-block}
+
+    /* ABOUT */
+    .about-grid{grid-template-columns: 1.1fr .9fr}
+    .skill-list{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+    .skill-list .chip svg{width:14px;height:14px}
+
+    /* PROJECTS */
+    .projects-grid{grid-template-columns: repeat(3, 1fr)}
+    .project{padding:20px}
+    .project h3{margin:10px 0 6px; font-size:1.1rem}
+    .project .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .project .meta{display:flex; gap:12px; align-items:center; margin-top:10px; font-size:.9rem; color:var(--muted)}
+
+    /* EXPERIENCE */
+    .timeline{position:relative; padding-left:28px}
+    .timeline::before{content:""; position:absolute; left:10px; top:0; bottom:0; width:2px; background:linear-gradient(180deg, var(--accent), var(--accent-2))}
+    .t-item{position:relative; padding:14px 16px 14px 18px; margin-bottom:14px}
+    .t-item::before{content:""; position:absolute; left:-4px; top:18px; width:10px; height:10px; border-radius:50%; background:var(--accent-2); box-shadow:0 0 0 4px rgba(0,224,255,.15)}
+    .t-item h4{margin:0 0 4px}
+    .t-item .where{color:var(--muted); font-size:.92rem; margin-bottom:6px}
+
+    /* RESUME */
+    .resume-cta{display:flex; flex-wrap:wrap; gap:12px; margin:14px 0 22px}
+    .pdf-wrap{border:1px solid rgba(255,255,255,.1); border-radius:14px; overflow:hidden; background:#0a0f18}
+    .pdf-fallback{padding:18px; color:var(--muted); text-align:center}
+    .pdf{width:100%; height:70vh; border:0; display:block}
+
+    /* CONTACT */
+    .contact-grid{grid-template-columns:1fr 1fr}
+    form .row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    input, textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.03); color:var(--text)}
+    textarea{min-height:140px; resize:vertical}
+    label{font-size:.9rem; color:var(--muted)}
+    .note{font-size:.85rem; color:var(--muted)}
+
+    /* FOOTER */
+    footer{padding:26px 0; color:var(--muted)}
+    .footer-grid{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+
+    /* REVEAL ANIMS */
+    .reveal{opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease}
+    .reveal.show{opacity:1; transform: translateY(0)}
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px){
+      .hero-wrap{grid-template-columns:1fr}
+      .about-grid, .projects-grid, .contact-grid{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .nav-links{display:none}
+      .menu-btn{display:inline-flex; align-items:center; gap:.5rem; background:transparent; border:1px solid rgba(255,255,255,.12); color:var(--text); padding:.5rem .8rem; border-radius:10px}
+      .projects-grid{grid-template-columns:1fr}
+      .section{padding:64px 0}
+      .pdf{height:60vh}
+    }
+  </style>
+        </style>
+    </head>
+    <body>
+        <h4>this is DHIVYA</h4>
+    </body>
+</html>
